@@ -14,11 +14,9 @@ body{
     background-color: #AA574F;
     padding: 10px;
     width: 700px;
-    height: 300px;
     margin: auto;
     border-radius: 10px;
     text-align: center;
-    align-content: space-between;
 }
 
 input{
@@ -35,7 +33,7 @@ li{
     border-radius: 5px;
     list-style-type: none;
     margin: 5px auto;
-    width: 300px;
+    max-width: 600px;
     height: 30px;
     text-align: center;
 }
@@ -60,6 +58,7 @@ li{
 }
 .inputTarefa{
     padding: 10px;
+    width: 100%;
 }
 input[type = text]{
     outline: none;

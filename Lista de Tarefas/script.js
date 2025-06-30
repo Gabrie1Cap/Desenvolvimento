@@ -2,6 +2,10 @@ function addTarefa(){
     let inputTarefa = document.getElementById('inputTarefa')
     let tarefa = inputTarefa.value;
 
+    if(tarefa == ''){
+        alert('Por favor digite uma tarefa!')
+    }else{
+        
     let listaTarefas = document.getElementById('listaTarefas');
     let novaTarefa = document.createElement('li');
 
@@ -12,4 +16,4 @@ function addTarefa(){
     mensagem.textContent = 'Tarefa adicionada com sucesso!';
 
     inputTarefa.value = '';
-};
+}};

@@ -7,7 +7,7 @@
 }
 body{
     background-color: #D58D87;
-    padding: 10px 0px 10px 0px;
+    padding: 10px;
 }
 header{
     font-size: 1em;
@@ -16,16 +16,18 @@ header{
     color: #FFFFFF;
     background-color: #AA574F;
     padding: 10px;
-    width: 700px;
+    min-height: 200px;
+    max-width: 700px;
     margin: auto;
     border-radius: 10px;
     text-align: center;
+
 }
 p{
     font-weight: bold;
 }
 input{
-    display: block;
+    display: flex;
     margin: auto;
     margin-top: 30px;
 }

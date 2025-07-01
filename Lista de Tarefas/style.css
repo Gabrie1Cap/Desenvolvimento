@@ -41,7 +41,9 @@ li{
     margin: 5px auto;
     max-width: 600px;
     height: 30px;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
 }
 #tarefa{
     text-align: center;
@@ -74,7 +76,9 @@ input[type = text]{
     height: 30px;
     font-size: 1em;
 }
-
+input[type = button]{
+    display: inline;
+}
 footer{
     text-align: center;
     font-size: 10px;
@@ -82,4 +86,20 @@ footer{
 a{
     color: black;
     text-decoration: none;
+}
+
+.btnRemover{
+    color: red;
+    margin-left: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 3px;
+    padding: 3px;
+    font-size: 8px;
+}
+.btnEditar{
+    color: blue;
+    margin: 4px 3px;
+    padding: 3px;
+    font-size: 10px;
 }

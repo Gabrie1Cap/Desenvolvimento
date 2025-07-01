@@ -1,10 +1,10 @@
 let tarefas = []
-
+const mensagem = document.getElementById('mensagem');
 function addTarefa(){
 
     const inputTarefa = document.getElementById('inputTarefa')
     let tarefa = inputTarefa.value.trim();
-    const mensagem = document.getElementById('mensagem');
+
     let mensagemCerta = 'Tarefa adicionada com sucesso!';
     let mensagemErro = 'Por favor digite uma tarefa!';
 
@@ -19,12 +19,47 @@ function addTarefa(){
         inputTarefa.value = '';
 }};
 
-    function renderList(){
+function renderList(){
         const listaTarefas = document.getElementById('listaTarefas');
         listaTarefas.innerHTML = ''
-        let i = 0
-        for(i ; i < tarefas.length ; i++){
-        const novaTarefa = document.createElement('li');
-        novaTarefa.textContent = tarefas[i];
-        listaTarefas.appendChild(novaTarefa,);
+
+        for(let i = 0 ; i < tarefas.length ; i++){
+            const novaTarefa = document.createElement('li');
+            novaTarefa.textContent = tarefas[i];
+
+            let botaoRemover = document.createElement('button')
+            botaoRemover.className = 'btnRemover'
+            botaoRemover.textContent = 'Remover'
+            botaoRemover.onclick = () => removerTarefa(i)
+
+            let botaoEditar = document.createElement('button')
+            botaoEditar.className = 'btnEditar'
+            botaoEditar.textContent = 'Editar'
+            botaoEditar.onclick = () => editarTarefa(i)
+
+            
+            novaTarefa.appendChild(botaoRemover)
+            novaTarefa.appendChild(botaoEditar)
+            listaTarefas.appendChild(novaTarefa);
+}}
+
+function removerTarefa(i){
+    tarefas.splice(i , 1)
+    renderList()
+}
+
+function editarTarefa(i){
+    let tarefaEditada = prompt('Editar Tarefa:')
+    if (tarefaEditada.trim() !== ''){
+        tarefas[i] = tarefaEditada
+        renderList()
+    }
+}
+
+function limparTarefas(){
+    if(tarefas.length !== 0){
+    tarefas.length = 0
+    renderList()
+    mensagem.textContent = 'Todas as tarefas foram excluídas com sucesso!'
+    mensagem.style.color = 'green'
 }}

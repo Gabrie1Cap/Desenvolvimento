@@ -108,3 +108,13 @@ a{
     padding: 3px;
     font-size: .8em;
 }
+.btnConcluir{
+    color: green;
+    height: 90%;
+    margin-left: 3px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 5px;
+    padding: 3px;
+    font-size: .8em;
+}

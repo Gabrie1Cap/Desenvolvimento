@@ -37,14 +37,20 @@ function renderList(){
             botaoEditar.textContent = 'Editar'
             botaoEditar.onclick = () => editarTarefa(i)
 
+            let botaoConcluir = document.createElement('button')
+            botaoConcluir.className = 'btnConcluir'
+            botaoConcluir.textContent = 'Concluída'
+            botaoConcluir.onclick = () => tarefaConcluida(i)
             
             novaTarefa.appendChild(botaoRemover)
             novaTarefa.appendChild(botaoEditar)
+            novaTarefa.appendChild(botaoConcluir)
             listaTarefas.appendChild(novaTarefa);
 }}
 
 function removerTarefa(i){
     tarefas.splice(i , 1)
+    mensagem.textContent = 'Tarefa removida'
     renderList()
 }
 
@@ -52,6 +58,7 @@ function editarTarefa(i){
     let tarefaEditada = prompt('Editar Tarefa:')
     if (tarefaEditada.trim() !== ''){
         tarefas[i] = tarefaEditada
+        mensagem.textContent = 'Tarefa editada com sucesso!'
         renderList()
     }
 }
@@ -63,3 +70,10 @@ function limparTarefas(){
     mensagem.textContent = 'Todas as tarefas foram excluídas com sucesso!'
     mensagem.style.color = 'green'
 }}
+
+function tarefaConcluida(i){
+    tarefas.splice(i , 1)
+    renderList()
+    mensagem.textContent = 'Tarefa marcada como concluída!'
+    tarefas[i].style.backgroundColor = 'green'
+}
